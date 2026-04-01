@@ -47,11 +47,19 @@ class User extends Authenticatable implements MustVerifyEmail
         'mobile',
         'address',
         'birthday',
+        'user_level_id',
+        'notifications',
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
+    ];
+
+    protected $casts = [
+        'notifications' => 'array',
+        'email_verified_at' => 'datetime',
+        'birthday' => 'date',
     ];
 
     protected $appends = [
