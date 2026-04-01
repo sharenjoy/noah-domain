@@ -49,6 +49,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'birthday',
         'user_level_id',
         'notifications',
+        'preferences',
     ];
 
     protected $hidden = [
@@ -58,6 +59,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     protected $casts = [
         'notifications' => 'array',
+        'preferences' => 'array',
         'email_verified_at' => 'datetime',
         'birthday' => 'date',
     ];
