@@ -13,7 +13,7 @@ use Sharenjoy\NoahDomain\Models\Cms\Traits\HasMediaLibrary;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\HasMenus;
 use Sharenjoy\NoahDomain\Utils\JsonLD;
 use Sharenjoy\NoahDomain\Utils\Media;
-use SolutionForest\FilamentTree\Concern\ModelTree;
+// use SolutionForest\FilamentTree\Concern\ModelTree;
 use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
@@ -22,7 +22,7 @@ class Category extends Model
     use SoftDeletes;
     use HasTranslations;
     use HasMediaLibrary;
-    use ModelTree;
+    // use ModelTree;
     use HasMenus;
     use HasSEO;
 

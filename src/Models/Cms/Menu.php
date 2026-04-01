@@ -13,7 +13,7 @@ use Sharenjoy\NoahDomain\Models\Cms\Traits\HasCategoryTree;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\HasMediaLibrary;
 use Sharenjoy\NoahDomain\Utils\JsonLD;
 use Sharenjoy\NoahDomain\Utils\Media;
-use SolutionForest\FilamentTree\Concern\ModelTree;
+// use SolutionForest\FilamentTree\Concern\ModelTree;
 use Spatie\Translatable\HasTranslations;
 
 class Menu extends Model
@@ -22,7 +22,7 @@ class Menu extends Model
     use SoftDeletes;
     use HasTranslations;
     use HasMediaLibrary;
-    use ModelTree;
+    // use ModelTree;
     use HasCategoryTree;
     // use HasPromos; //** NoahShop CAN OPEN
     use HasSEO;
