@@ -16,7 +16,6 @@ class NoahDomainServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('noah-domain')
-            ->hasRoute()
             ->hasConfigFile([
                 'twaddress',
             ])
