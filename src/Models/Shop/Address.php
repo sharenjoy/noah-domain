@@ -10,6 +10,8 @@ class Address extends Model
 {
     use CommonModelTrait;
 
+    protected $guarded = [];
+
     protected $casts = [
         'is_default' => 'boolean',
     ];
