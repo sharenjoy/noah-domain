@@ -17,10 +17,6 @@ class MediaLibraryItem extends Model implements HasMedia
 
     protected $table = 'filament_media_library';
 
-    protected $with = [
-        'user',
-    ];
-
     public function getMediaLibraryCollectionName(): string
     {
         return 'library';
