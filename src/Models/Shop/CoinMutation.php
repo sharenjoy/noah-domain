@@ -13,6 +13,8 @@ class CoinMutation extends Model
 {
     use CommonModelTrait;
 
+    protected $guarded = [];
+
     protected $casts = [
         'type' => CoinType::class,
     ];

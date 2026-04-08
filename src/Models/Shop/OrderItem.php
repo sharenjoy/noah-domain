@@ -16,6 +16,8 @@ class OrderItem extends Model
     use CommonModelTrait;
     use HasPromos;
 
+    protected $guarded = [];
+
     protected $casts = [
         'type' => OrderItemType::class,
         'preorder' => 'boolean',

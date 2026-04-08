@@ -14,6 +14,8 @@ class Currency extends Model
     use SortableTrait;
     use HasMediaLibrary;
 
+    protected $guarded = [];
+
     protected $casts = [];
 
     public $translatable = [];

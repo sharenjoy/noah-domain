@@ -18,6 +18,8 @@ class Carousel extends Model implements Sortable
     use HasTranslations;
     use HasMediaLibrary;
 
+    protected $guarded = [];
+
     protected $casts = [
         'is_active' => 'boolean',
     ];

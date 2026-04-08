@@ -16,6 +16,8 @@ class OrderShipment extends Model
 {
     use CommonModelTrait;
 
+    protected $guarded = [];
+
     protected $casts = [
         'status' => OrderShipmentStatus::class,
         'provider' => DeliveryProvider::class,

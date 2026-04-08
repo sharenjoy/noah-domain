@@ -19,6 +19,8 @@ class UserLevel extends Model implements Sortable
     use HasTranslations;
     use SoftDeletes;
 
+    protected $guarded = [];
+
     protected $casts = [
         'is_default' => 'boolean',
         'is_active' => 'boolean',

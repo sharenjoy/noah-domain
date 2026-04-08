@@ -14,6 +14,8 @@ class UserCouponStatus extends Model
 {
     use CommonModelTrait;
 
+    protected $guarded = [];
+
     protected $casts = [
         'status' => UserCouponStatusEnum::class,
     ];

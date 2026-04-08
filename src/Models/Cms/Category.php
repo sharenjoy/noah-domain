@@ -26,6 +26,8 @@ class Category extends Model
     use HasMenus;
     use HasSEO;
 
+    protected $guarded = [];
+
     protected $casts = [
         'parent_id' => 'int',
         'album' => 'array',

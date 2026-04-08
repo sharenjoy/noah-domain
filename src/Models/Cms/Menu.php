@@ -27,6 +27,8 @@ class Menu extends Model
     // use HasPromos; //** NoahShop CAN OPEN
     use HasSEO;
 
+    protected $guarded = [];
+
     protected $casts = [
         'parent_id' => 'int',
         'album' => 'array',

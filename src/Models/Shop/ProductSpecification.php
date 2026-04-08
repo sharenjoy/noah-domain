@@ -21,6 +21,8 @@ class ProductSpecification extends Model implements Sortable
     use HasMediaLibrary;
     use HasStock;
 
+    protected $guarded = [];
+
     protected $casts = [
         'spec_detail_name' => 'json',
         'album' => 'array',

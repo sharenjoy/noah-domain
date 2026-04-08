@@ -33,6 +33,8 @@ class Product extends Model implements Sortable
     use HasTags;
     use HasSEO;
 
+    protected $guarded = [];
+
     protected $casts = [
         'album' => 'array',
         'categories' => 'array',

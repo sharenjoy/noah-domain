@@ -15,6 +15,8 @@ class InvoicePrice extends Model
 {
     use CommonModelTrait;
 
+    protected $guarded = [];
+
     protected $casts = [
         'type' => InvoicePriceType::class,
     ];

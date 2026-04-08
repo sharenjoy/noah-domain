@@ -24,6 +24,8 @@ class BaseOrder extends Model
     use CommonModelTrait;
     // use HasReactions;
 
+    protected $guarded = [];
+
     protected $casts = [
         'status' => OrderStatus::class,
     ];

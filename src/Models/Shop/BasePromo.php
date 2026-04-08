@@ -35,6 +35,8 @@ class BasePromo extends Model
     use HasTags;
     use HasSEO;
 
+    protected $guarded = [];
+
     protected $casts = [
         'type' => PromoType::class,
         'discount_type' => PromoDiscountType::class,

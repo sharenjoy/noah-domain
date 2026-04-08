@@ -16,6 +16,8 @@ class UserCoupon extends Model
     use CommonModelTrait;
     use SoftDeletes;
 
+    protected $guarded = [];
+
     protected $casts = [
         'started_at' => 'datetime',
         'expired_at' => 'datetime',

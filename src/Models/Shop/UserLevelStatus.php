@@ -13,6 +13,8 @@ class UserLevelStatus extends Model
 {
     use CommonModelTrait;
 
+    protected $guarded = [];
+
     protected $casts = [
         'status' => UserLevelStatusEnum::class,
         'started_at' => 'datetime',

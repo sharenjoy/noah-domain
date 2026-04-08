@@ -25,6 +25,8 @@ class Brand extends Model implements Sortable
     use HasMediaLibrary;
     use HasSEO;
 
+    protected $guarded = [];
+
     protected $casts = [
         'album' => 'array',
         'is_active' => 'boolean',

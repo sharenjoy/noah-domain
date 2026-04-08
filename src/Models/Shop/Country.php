@@ -9,6 +9,8 @@ class Country extends Model
 {
     use CommonModelTrait;
 
+    protected $guarded = [];
+
     protected $casts = [];
 
     protected array $sort = [];

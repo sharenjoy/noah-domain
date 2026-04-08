@@ -22,6 +22,8 @@ class StaticPage extends Model
     use HasCategoryTree;
     use HasSEO;
 
+    protected $guarded = [];
+
     protected $casts = [
         'album' => 'array',
         'categories' => 'array',

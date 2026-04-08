@@ -25,6 +25,8 @@ class Tag extends Model implements Sortable
     use HasTranslations;
     use HasSEO;
 
+    protected $guarded = [];
+
     public array $translatable = [
         'name',
     ];

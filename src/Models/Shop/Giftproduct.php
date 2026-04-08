@@ -20,6 +20,8 @@ class Giftproduct extends Model implements Sortable
     use HasTranslations;
     use HasMediaLibrary;
 
+    protected $guarded = [];
+
     protected $casts = [
         'album' => 'array',
         'is_active' => 'boolean',

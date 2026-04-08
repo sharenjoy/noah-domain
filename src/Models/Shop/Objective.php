@@ -16,6 +16,8 @@ class Objective extends Model
     use CommonModelTrait;
     use SoftDeletes;
 
+    protected $guarded = [];
+
     protected $casts = [
         'type' => ObjectiveType::class,
         'status' => ObjectiveStatus::class,
