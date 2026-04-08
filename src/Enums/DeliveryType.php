@@ -19,18 +19,18 @@ enum DeliveryType: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Address => __('noah-shop::noah-shop.shop.type.title.delivery.address'),
-            self::Pickinstore => __('noah-shop::noah-shop.shop.type.title.delivery.pickinstore'),
-            self::Pickinretail => __('noah-shop::noah-shop.shop.type.title.delivery.pickinretail'),
+            self::Address => __('noah.shop.type.title.delivery.address'),
+            self::Pickinstore => __('noah.shop.type.title.delivery.pickinstore'),
+            self::Pickinretail => __('noah.shop.type.title.delivery.pickinretail'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Address => __('noah-shop::noah-shop.shop.type.description.delivery.address'),
-            self::Pickinstore => __('noah-shop::noah-shop.shop.type.description.delivery.pickinstore'),
-            self::Pickinretail => __('noah-shop::noah-shop.shop.type.description.delivery.pickinretail'),
+            self::Address => __('noah.shop.type.description.delivery.address'),
+            self::Pickinstore => __('noah.shop.type.description.delivery.pickinstore'),
+            self::Pickinretail => __('noah.shop.type.description.delivery.pickinretail'),
         };
     }
 

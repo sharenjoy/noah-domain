@@ -21,11 +21,11 @@ enum OrderShipmentStatus: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::New => __('noah-shop::noah-shop.shop.status.title.shipment.new'),
-            self::Shipped => __('noah-shop::noah-shop.shop.status.title.shipment.shipped'),
-            self::Delivered => __('noah-shop::noah-shop.shop.status.title.shipment.delivered'),
-            self::Returning => __('noah-shop::noah-shop.shop.status.title.shipment.returning'),
-            self::Returned => __('noah-shop::noah-shop.shop.status.title.shipment.returned'),
+            self::New => __('noah.shop.status.title.shipment.new'),
+            self::Shipped => __('noah.shop.status.title.shipment.shipped'),
+            self::Delivered => __('noah.shop.status.title.shipment.delivered'),
+            self::Returning => __('noah.shop.status.title.shipment.returning'),
+            self::Returned => __('noah.shop.status.title.shipment.returned'),
         };
     }
 

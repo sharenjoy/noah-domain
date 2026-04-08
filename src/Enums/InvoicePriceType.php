@@ -23,12 +23,12 @@ enum InvoicePriceType: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Product => __('noah-shop::noah-shop.shop.type.title.invoice_price.product'),
-            self::ProductDiscount => __('noah-shop::noah-shop.shop.type.title.invoice_price.product_discount'),
-            self::Delivery => __('noah-shop::noah-shop.shop.type.title.invoice_price.delivery'),
-            self::Shoppingmoney => __('noah-shop::noah-shop.shop.type.title.invoice_price.shoppingmoney'),
-            self::Point => __('noah-shop::noah-shop.shop.type.title.invoice_price.point'),
-            self::Promo => __('noah-shop::noah-shop.shop.type.title.invoice_price.promo'),
+            self::Product => __('noah.shop.type.title.invoice_price.product'),
+            self::ProductDiscount => __('noah.shop.type.title.invoice_price.product_discount'),
+            self::Delivery => __('noah.shop.type.title.invoice_price.delivery'),
+            self::Shoppingmoney => __('noah.shop.type.title.invoice_price.shoppingmoney'),
+            self::Point => __('noah.shop.type.title.invoice_price.point'),
+            self::Promo => __('noah.shop.type.title.invoice_price.promo'),
         };
     }
 

@@ -8,7 +8,7 @@ class UserHasPromoCouponAlready extends Exception
 {
     public function __construct($message = null)
     {
-        $message = $message ?? __('noah-shop::noah-shop.shop.promo.title.has_coupon_already');
+        $message = $message ?? __('noah.shop.promo.title.has_coupon_already');
         parent::__construct($message);
     }
 

@@ -21,20 +21,20 @@ enum PromoType: string implements HasLabel, HasDescription, HasIcon, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Coupon => __('noah-shop::noah-shop.shop.type.title.promo.coupon'),
-            self::MinQuantity => __('noah-shop::noah-shop.shop.type.title.promo.minquantity'),
-            self::MinSpend => __('noah-shop::noah-shop.shop.type.title.promo.minspend'),
-            self::DeliveryFree => __('noah-shop::noah-shop.shop.type.title.promo.deliveryfree'),
+            self::Coupon => __('noah.shop.type.title.promo.coupon'),
+            self::MinQuantity => __('noah.shop.type.title.promo.minquantity'),
+            self::MinSpend => __('noah.shop.type.title.promo.minspend'),
+            self::DeliveryFree => __('noah.shop.type.title.promo.deliveryfree'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Coupon => __('noah-shop::noah-shop.shop.type.description.promo.coupon'),
-            self::MinQuantity => __('noah-shop::noah-shop.shop.type.description.promo.minquantity'),
-            self::MinSpend => __('noah-shop::noah-shop.shop.type.description.promo.minspend'),
-            self::DeliveryFree => __('noah-shop::noah-shop.shop.type.description.promo.deliveryfree'),
+            self::Coupon => __('noah.shop.type.description.promo.coupon'),
+            self::MinQuantity => __('noah.shop.type.description.promo.minquantity'),
+            self::MinSpend => __('noah.shop.type.description.promo.minspend'),
+            self::DeliveryFree => __('noah.shop.type.description.promo.deliveryfree'),
         };
     }
 

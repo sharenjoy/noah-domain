@@ -20,18 +20,18 @@ enum PromoDiscountType: string implements HasLabel, HasDescription, HasIcon, Has
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Amount => __('noah-shop::noah-shop.shop.type.title.promo_discount.amount'),
-            self::Percent => __('noah-shop::noah-shop.shop.type.title.promo_discount.percent'),
-            self::Gift => __('noah-shop::noah-shop.shop.type.title.promo_discount.gift'),
+            self::Amount => __('noah.shop.type.title.promo_discount.amount'),
+            self::Percent => __('noah.shop.type.title.promo_discount.percent'),
+            self::Gift => __('noah.shop.type.title.promo_discount.gift'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Amount => __('noah-shop::noah-shop.shop.type.description.promo_discount.amount'),
-            self::Percent => __('noah-shop::noah-shop.shop.type.description.promo_discount.percent'),
-            self::Gift => __('noah-shop::noah-shop.shop.type.description.promo_discount.gift'),
+            self::Amount => __('noah.shop.type.description.promo_discount.amount'),
+            self::Percent => __('noah.shop.type.description.promo_discount.percent'),
+            self::Gift => __('noah.shop.type.description.promo_discount.gift'),
         };
     }
 

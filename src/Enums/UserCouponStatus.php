@@ -20,20 +20,20 @@ enum UserCouponStatus: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Assigned => __('noah-shop::noah-shop.shop.status.title.user_coupon.assigned'),
-            self::Saved => __('noah-shop::noah-shop.shop.status.title.user_coupon.saved'),
-            self::Useing => __('noah-shop::noah-shop.shop.status.title.user_coupon.useing'),
-            self::Used => __('noah-shop::noah-shop.shop.status.title.user_coupon.used'),
+            self::Assigned => __('noah.shop.status.title.user_coupon.assigned'),
+            self::Saved => __('noah.shop.status.title.user_coupon.saved'),
+            self::Useing => __('noah.shop.status.title.user_coupon.useing'),
+            self::Used => __('noah.shop.status.title.user_coupon.used'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Assigned => __('noah-shop::noah-shop.shop.status.description.user_coupon.assigned'),
-            self::Saved => __('noah-shop::noah-shop.shop.status.description.user_coupon.saved'),
-            self::Useing => __('noah-shop::noah-shop.shop.status.description.user_coupon.useing'),
-            self::Used => __('noah-shop::noah-shop.shop.status.description.user_coupon.used'),
+            self::Assigned => __('noah.shop.status.description.user_coupon.assigned'),
+            self::Saved => __('noah.shop.status.description.user_coupon.saved'),
+            self::Useing => __('noah.shop.status.description.user_coupon.useing'),
+            self::Used => __('noah.shop.status.description.user_coupon.used'),
         };
     }
 

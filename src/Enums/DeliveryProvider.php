@@ -22,24 +22,24 @@ enum DeliveryProvider: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Kerrytj => __('noah-shop::noah-shop.shop.provider.title.delivery.kerrytj'),
-            self::Postoffice => __('noah-shop::noah-shop.shop.provider.title.delivery.postoffice'),
-            self::Tcat => __('noah-shop::noah-shop.shop.provider.title.delivery.tcat'),
-            self::Fedex => __('noah-shop::noah-shop.shop.provider.title.delivery.fedex'),
-            self::DHL => __('noah-shop::noah-shop.shop.provider.title.delivery.dhl'),
-            self::None => __('noah-shop::noah-shop.shop.provider.title.delivery.none'),
+            self::Kerrytj => __('noah.shop.provider.title.delivery.kerrytj'),
+            self::Postoffice => __('noah.shop.provider.title.delivery.postoffice'),
+            self::Tcat => __('noah.shop.provider.title.delivery.tcat'),
+            self::Fedex => __('noah.shop.provider.title.delivery.fedex'),
+            self::DHL => __('noah.shop.provider.title.delivery.dhl'),
+            self::None => __('noah.shop.provider.title.delivery.none'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Kerrytj => __('noah-shop::noah-shop.shop.provider.description.delivery.kerrytj'),
-            self::Postoffice => __('noah-shop::noah-shop.shop.provider.description.delivery.postoffice'),
-            self::Tcat => __('noah-shop::noah-shop.shop.provider.description.delivery.tcat'),
-            self::Fedex => __('noah-shop::noah-shop.shop.provider.description.delivery.fedex'),
-            self::DHL => __('noah-shop::noah-shop.shop.provider.description.delivery.dhl'),
-            self::None => __('noah-shop::noah-shop.shop.provider.description.delivery.none'),
+            self::Kerrytj => __('noah.shop.provider.description.delivery.kerrytj'),
+            self::Postoffice => __('noah.shop.provider.description.delivery.postoffice'),
+            self::Tcat => __('noah.shop.provider.description.delivery.tcat'),
+            self::Fedex => __('noah.shop.provider.description.delivery.fedex'),
+            self::DHL => __('noah.shop.provider.description.delivery.dhl'),
+            self::None => __('noah.shop.provider.description.delivery.none'),
         };
     }
 

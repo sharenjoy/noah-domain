@@ -18,8 +18,8 @@ enum ProductLimit: string implements HasLabel, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::International => __('noah-shop::noah-shop.no_international'),
-            self::Point => __('noah-shop::noah-shop.no_point'),
+            self::International => __('noah.no_international'),
+            self::Point => __('noah.no_point'),
         };
     }
 

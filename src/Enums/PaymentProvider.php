@@ -18,16 +18,16 @@ enum PaymentProvider: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::TapPay => __('noah-shop::noah-shop.shop.provider.title.payment.tappay'),
-            self::LINEPay => __('noah-shop::noah-shop.shop.provider.title.payment.linepay'),
+            self::TapPay => __('noah.shop.provider.title.payment.tappay'),
+            self::LINEPay => __('noah.shop.provider.title.payment.linepay'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::TapPay => __('noah-shop::noah-shop.shop.provider.description.payment.tappay'),
-            self::LINEPay => __('noah-shop::noah-shop.shop.provider.description.payment.linepay'),
+            self::TapPay => __('noah.shop.provider.description.payment.tappay'),
+            self::LINEPay => __('noah.shop.provider.description.payment.linepay'),
         };
     }
 

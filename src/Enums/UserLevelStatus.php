@@ -18,16 +18,16 @@ enum UserLevelStatus: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::On => __('noah-shop::noah-shop.shop.status.title.user_level_status.on'),
-            self::Off => __('noah-shop::noah-shop.shop.status.title.user_level_status.off'),
+            self::On => __('noah.shop.status.title.user_level_status.on'),
+            self::Off => __('noah.shop.status.title.user_level_status.off'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::On => __('noah-shop::noah-shop.shop.status.description.user_level_status.on'),
-            self::Off => __('noah-shop::noah-shop.shop.status.description.user_level_status.off'),
+            self::On => __('noah.shop.status.description.user_level_status.on'),
+            self::Off => __('noah.shop.status.description.user_level_status.off'),
         };
     }
 

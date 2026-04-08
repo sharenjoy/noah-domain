@@ -18,16 +18,16 @@ enum CoinType: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Point => __('noah-shop::noah-shop.shop.type.title.coin.point'),
-            self::ShoppingMoney => __('noah-shop::noah-shop.shop.type.title.coin.shoppingmoney'),
+            self::Point => __('noah.shop.type.title.coin.point'),
+            self::ShoppingMoney => __('noah.shop.type.title.coin.shoppingmoney'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Point => __('noah-shop::noah-shop.shop.type.description.coin.point'),
-            self::ShoppingMoney => __('noah-shop::noah-shop.shop.type.description.coin.shoppingmoney'),
+            self::Point => __('noah.shop.type.description.coin.point'),
+            self::ShoppingMoney => __('noah.shop.type.description.coin.shoppingmoney'),
         };
     }
 

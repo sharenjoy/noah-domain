@@ -20,20 +20,20 @@ enum SurveyEntryStatus: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Established => __('noah-shop::noah-shop.survey.status.title.entry.established'),
-            self::Completed => __('noah-shop::noah-shop.survey.status.title.entry.completed'),
-            self::Cancelled => __('noah-shop::noah-shop.survey.status.title.entry.cancelled'),
-            self::Rejected => __('noah-shop::noah-shop.survey.status.title.entry.rejected'),
+            self::Established => __('noah.survey.status.title.entry.established'),
+            self::Completed => __('noah.survey.status.title.entry.completed'),
+            self::Cancelled => __('noah.survey.status.title.entry.cancelled'),
+            self::Rejected => __('noah.survey.status.title.entry.rejected'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Established => __('noah-shop::noah-shop.survey.status.description.entry.established'),
-            self::Completed => __('noah-shop::noah-shop.survey.status.description.entry.completed'),
-            self::Cancelled => __('noah-shop::noah-shop.survey.status.description.entry.cancelled'),
-            self::Rejected => __('noah-shop::noah-shop.survey.status.description.entry.rejected'),
+            self::Established => __('noah.survey.status.description.entry.established'),
+            self::Completed => __('noah.survey.status.description.entry.completed'),
+            self::Cancelled => __('noah.survey.status.description.entry.cancelled'),
+            self::Rejected => __('noah.survey.status.description.entry.rejected'),
         };
     }
 

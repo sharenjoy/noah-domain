@@ -21,20 +21,20 @@ enum ObjectiveStatus: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::New => __('noah-shop::noah-shop.shop.status.title.objective.new'),
-            self::Processing => __('noah-shop::noah-shop.shop.status.title.objective.processing'),
-            self::Finished => __('noah-shop::noah-shop.shop.status.title.objective.finished'),
-            self::Failed => __('noah-shop::noah-shop.shop.status.title.objective.failed'),
+            self::New => __('noah.shop.status.title.objective.new'),
+            self::Processing => __('noah.shop.status.title.objective.processing'),
+            self::Finished => __('noah.shop.status.title.objective.finished'),
+            self::Failed => __('noah.shop.status.title.objective.failed'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::New => __('noah-shop::noah-shop.shop.status.description.objective.new'),
-            self::Processing => __('noah-shop::noah-shop.shop.status.description.objective.processing'),
-            self::Finished => __('noah-shop::noah-shop.shop.status.description.objective.finished'),
-            self::Failed => __('noah-shop::noah-shop.shop.status.description.objective.failed'),
+            self::New => __('noah.shop.status.description.objective.new'),
+            self::Processing => __('noah.shop.status.description.objective.processing'),
+            self::Finished => __('noah.shop.status.description.objective.finished'),
+            self::Failed => __('noah.shop.status.description.objective.failed'),
         };
     }
 

@@ -19,18 +19,18 @@ enum StockMethod: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Notification => __('noah-shop::noah-shop.shop.method.title.stock.email_notification'),
-            self::Preorderable => __('noah-shop::noah-shop.shop.method.title.stock.preorderable'),
-            self::OffLine => __('noah-shop::noah-shop.shop.method.title.stock.offline'),
+            self::Notification => __('noah.shop.method.title.stock.email_notification'),
+            self::Preorderable => __('noah.shop.method.title.stock.preorderable'),
+            self::OffLine => __('noah.shop.method.title.stock.offline'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Notification => __('noah-shop::noah-shop.shop.method.description.stock.email_notification'),
-            self::Preorderable => __('noah-shop::noah-shop.shop.method.description.stock.preorderable'),
-            self::OffLine => __('noah-shop::noah-shop.shop.method.description.stock.offline'),
+            self::Notification => __('noah.shop.method.description.stock.email_notification'),
+            self::Preorderable => __('noah.shop.method.description.stock.preorderable'),
+            self::OffLine => __('noah.shop.method.description.stock.offline'),
         };
     }
 

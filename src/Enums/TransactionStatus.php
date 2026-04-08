@@ -23,24 +23,24 @@ enum TransactionStatus: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::New => __('noah-shop::noah-shop.shop.status.title.transaction.new'),
-            self::Pending => __('noah-shop::noah-shop.shop.status.title.transaction.pending'),
-            self::Expired => __('noah-shop::noah-shop.shop.status.title.transaction.expired'),
-            self::Paid => __('noah-shop::noah-shop.shop.status.title.transaction.paid'),
-            self::Refunding => __('noah-shop::noah-shop.shop.status.title.transaction.refunding'),
-            self::Refunded => __('noah-shop::noah-shop.shop.status.title.transaction.refunded'),
+            self::New => __('noah.shop.status.title.transaction.new'),
+            self::Pending => __('noah.shop.status.title.transaction.pending'),
+            self::Expired => __('noah.shop.status.title.transaction.expired'),
+            self::Paid => __('noah.shop.status.title.transaction.paid'),
+            self::Refunding => __('noah.shop.status.title.transaction.refunding'),
+            self::Refunded => __('noah.shop.status.title.transaction.refunded'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::New => __('noah-shop::noah-shop.shop.status.description.transaction.new'),
-            self::Pending => __('noah-shop::noah-shop.shop.status.description.transaction.pending'),
-            self::Expired => __('noah-shop::noah-shop.shop.status.description.transaction.expired'),
-            self::Paid => __('noah-shop::noah-shop.shop.status.description.transaction.paid'),
-            self::Refunding => __('noah-shop::noah-shop.shop.status.description.transaction.refunding'),
-            self::Refunded => __('noah-shop::noah-shop.shop.status.description.transaction.refunded'),
+            self::New => __('noah.shop.status.description.transaction.new'),
+            self::Pending => __('noah.shop.status.description.transaction.pending'),
+            self::Expired => __('noah.shop.status.description.transaction.expired'),
+            self::Paid => __('noah.shop.status.description.transaction.paid'),
+            self::Refunding => __('noah.shop.status.description.transaction.refunding'),
+            self::Refunded => __('noah.shop.status.description.transaction.refunded'),
         };
     }
 

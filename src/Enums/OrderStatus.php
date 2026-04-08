@@ -23,24 +23,24 @@ enum OrderStatus: string implements HasLabel, HasDescription, HasIcon, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Initial => __('noah-shop::noah-shop.shop.status.title.order.initial'),
-            self::New => __('noah-shop::noah-shop.shop.status.title.order.new'),
-            self::Processing => __('noah-shop::noah-shop.shop.status.title.order.processing'),
-            self::Pending => __('noah-shop::noah-shop.shop.status.title.order.pending'),
-            self::Cancelled => __('noah-shop::noah-shop.shop.status.title.order.cancelled'),
-            self::Finished => __('noah-shop::noah-shop.shop.status.title.order.finished'),
+            self::Initial => __('noah.shop.status.title.order.initial'),
+            self::New => __('noah.shop.status.title.order.new'),
+            self::Processing => __('noah.shop.status.title.order.processing'),
+            self::Pending => __('noah.shop.status.title.order.pending'),
+            self::Cancelled => __('noah.shop.status.title.order.cancelled'),
+            self::Finished => __('noah.shop.status.title.order.finished'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Initial => __('noah-shop::noah-shop.shop.status.description.order.initial'),
-            self::New => __('noah-shop::noah-shop.shop.status.description.order.new'),
-            self::Processing => __('noah-shop::noah-shop.shop.status.description.order.processing'),
-            self::Pending => __('noah-shop::noah-shop.shop.status.description.order.pending'),
-            self::Cancelled => __('noah-shop::noah-shop.shop.status.description.order.cancelled'),
-            self::Finished => __('noah-shop::noah-shop.shop.status.description.order.finished'),
+            self::Initial => __('noah.shop.status.description.order.initial'),
+            self::New => __('noah.shop.status.description.order.new'),
+            self::Processing => __('noah.shop.status.description.order.processing'),
+            self::Pending => __('noah.shop.status.description.order.pending'),
+            self::Cancelled => __('noah.shop.status.description.order.cancelled'),
+            self::Finished => __('noah.shop.status.description.order.finished'),
         };
     }
 

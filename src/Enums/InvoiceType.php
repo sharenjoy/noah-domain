@@ -21,20 +21,20 @@ enum InvoiceType: string implements HasLabel, HasDescription, HasIcon, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Persion => __('noah-shop::noah-shop.shop.type.title.invoice.persion'),
-            self::Donate => __('noah-shop::noah-shop.shop.type.title.invoice.donate'),
-            self::Holder => __('noah-shop::noah-shop.shop.type.title.invoice.holder'),
-            self::Company => __('noah-shop::noah-shop.shop.type.title.invoice.company'),
+            self::Persion => __('noah.shop.type.title.invoice.persion'),
+            self::Donate => __('noah.shop.type.title.invoice.donate'),
+            self::Holder => __('noah.shop.type.title.invoice.holder'),
+            self::Company => __('noah.shop.type.title.invoice.company'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Persion => __('noah-shop::noah-shop.shop.type.description.invoice.persion'),
-            self::Donate => __('noah-shop::noah-shop.shop.type.description.invoice.donate'),
-            self::Holder => __('noah-shop::noah-shop.shop.type.description.invoice.holder'),
-            self::Company => __('noah-shop::noah-shop.shop.type.description.invoice.company'),
+            self::Persion => __('noah.shop.type.description.invoice.persion'),
+            self::Donate => __('noah.shop.type.description.invoice.donate'),
+            self::Holder => __('noah.shop.type.description.invoice.holder'),
+            self::Company => __('noah.shop.type.description.invoice.company'),
         };
     }
 

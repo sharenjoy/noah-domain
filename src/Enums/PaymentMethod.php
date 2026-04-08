@@ -20,20 +20,20 @@ enum PaymentMethod: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::CreditCard => __('noah-shop::noah-shop.shop.type.title.payment.creditcard'),
-            self::ATM => __('noah-shop::noah-shop.shop.type.title.payment.atm'),
-            self::COD => __('noah-shop::noah-shop.shop.type.title.payment.cod'),
-            self::LINEPay => __('noah-shop::noah-shop.shop.type.title.payment.linepay'),
+            self::CreditCard => __('noah.shop.type.title.payment.creditcard'),
+            self::ATM => __('noah.shop.type.title.payment.atm'),
+            self::COD => __('noah.shop.type.title.payment.cod'),
+            self::LINEPay => __('noah.shop.type.title.payment.linepay'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::CreditCard => __('noah-shop::noah-shop.shop.type.description.payment.creditcard'),
-            self::ATM => __('noah-shop::noah-shop.shop.type.description.payment.atm'),
-            self::COD => __('noah-shop::noah-shop.shop.type.description.payment.cod'),
-            self::LINEPay => __('noah-shop::noah-shop.shop.type.description.payment.linepay'),
+            self::CreditCard => __('noah.shop.type.description.payment.creditcard'),
+            self::ATM => __('noah.shop.type.description.payment.atm'),
+            self::COD => __('noah.shop.type.description.payment.cod'),
+            self::LINEPay => __('noah.shop.type.description.payment.linepay'),
         };
     }
 

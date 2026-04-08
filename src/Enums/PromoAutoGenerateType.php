@@ -20,20 +20,20 @@ enum PromoAutoGenerateType: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Never => __('noah-shop::noah-shop.shop.type.title.promo_auto_generate.never'),
-            self::Yearly => __('noah-shop::noah-shop.shop.type.title.promo_auto_generate.yearly'),
-            self::Monthly => __('noah-shop::noah-shop.shop.type.title.promo_auto_generate.monthly'),
-            self::Everyday => __('noah-shop::noah-shop.shop.type.title.promo_auto_generate.everyday'),
+            self::Never => __('noah.shop.type.title.promo_auto_generate.never'),
+            self::Yearly => __('noah.shop.type.title.promo_auto_generate.yearly'),
+            self::Monthly => __('noah.shop.type.title.promo_auto_generate.monthly'),
+            self::Everyday => __('noah.shop.type.title.promo_auto_generate.everyday'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Never => __('noah-shop::noah-shop.shop.type.description.promo_auto_generate.never'),
-            self::Yearly => __('noah-shop::noah-shop.shop.type.description.promo_auto_generate.yearly'),
-            self::Monthly => __('noah-shop::noah-shop.shop.type.description.promo_auto_generate.monthly'),
-            self::Everyday => __('noah-shop::noah-shop.shop.type.description.promo_auto_generate.everyday'),
+            self::Never => __('noah.shop.type.description.promo_auto_generate.never'),
+            self::Yearly => __('noah.shop.type.description.promo_auto_generate.yearly'),
+            self::Monthly => __('noah.shop.type.description.promo_auto_generate.monthly'),
+            self::Everyday => __('noah.shop.type.description.promo_auto_generate.everyday'),
         };
     }
 

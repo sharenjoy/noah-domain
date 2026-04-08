@@ -19,16 +19,16 @@ enum ObjectiveType: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::User => __('noah-shop::noah-shop.shop.type.title.objective.user'),
-            self::Product => __('noah-shop::noah-shop.shop.type.title.objective.product'),
+            self::User => __('noah.shop.type.title.objective.user'),
+            self::Product => __('noah.shop.type.title.objective.product'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::User => __('noah-shop::noah-shop.shop.type.description.objective.user'),
-            self::Product => __('noah-shop::noah-shop.shop.type.description.objective.product'),
+            self::User => __('noah.shop.type.description.objective.user'),
+            self::Product => __('noah.shop.type.description.objective.product'),
         };
     }
 

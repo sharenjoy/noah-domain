@@ -20,18 +20,18 @@ enum OrderItemType: string implements HasLabel, HasDescription, HasColor
     public function getLabel(): ?string
     {
         return match ($this) {
-            self::Product => __('noah-shop::noah-shop.shop.type.title.order_item.product'),
-            self::Group => __('noah-shop::noah-shop.shop.type.title.order_item.group'),
-            self::GiftProduct => __('noah-shop::noah-shop.shop.type.title.order_item.giftproduct'),
+            self::Product => __('noah.shop.type.title.order_item.product'),
+            self::Group => __('noah.shop.type.title.order_item.group'),
+            self::GiftProduct => __('noah.shop.type.title.order_item.giftproduct'),
         };
     }
 
     public function getDescription(): ?string
     {
         return match ($this) {
-            self::Product => __('noah-shop::noah-shop.shop.type.description.order_item.product'),
-            self::Group => __('noah-shop::noah-shop.shop.type.description.order_item.group'),
-            self::GiftProduct => __('noah-shop::noah-shop.shop.type.description.order_item.giftproduct'),
+            self::Product => __('noah.shop.type.description.order_item.product'),
+            self::Group => __('noah.shop.type.description.order_item.group'),
+            self::GiftProduct => __('noah.shop.type.description.order_item.giftproduct'),
         };
     }
 
