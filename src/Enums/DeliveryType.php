@@ -6,7 +6,7 @@ use Filament\Support\Colors\Color;
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasDescription;
 use Filament\Support\Contracts\HasLabel;
-use Sharenjoy\NoahCms\Enums\Traits\BaseEnum;
+use Sharenjoy\NoahDomain\Enums\Traits\BaseEnum;
 
 enum DeliveryType: string implements HasLabel, HasDescription, HasColor
 {

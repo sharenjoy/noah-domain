@@ -7,7 +7,7 @@ use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasDescription;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
-use Sharenjoy\NoahCms\Enums\Traits\BaseEnum;
+use Sharenjoy\NoahDomain\Enums\Traits\BaseEnum;
 
 enum OrderStatus: string implements HasLabel, HasDescription, HasIcon, HasColor
 {
