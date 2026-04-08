@@ -2,14 +2,9 @@
 
 namespace Sharenjoy\NoahDomain\Enums;
 
-use Filament\Support\Colors\Color;
-use Filament\Support\Contracts\HasColor;
-use Filament\Support\Contracts\HasDescription;
-use Filament\Support\Contracts\HasIcon;
-use Filament\Support\Contracts\HasLabel;
 use Sharenjoy\NoahDomain\Enums\Traits\BaseEnum;
 
-enum OrderStatus: string implements HasLabel, HasDescription, HasIcon, HasColor
+enum OrderStatus: string
 {
     use BaseEnum;
 
@@ -59,12 +54,12 @@ enum OrderStatus: string implements HasLabel, HasDescription, HasIcon, HasColor
     public function getColor(): array|string|null
     {
         return match ($this) {
-            self::Initial => Color::Yellow,
-            self::New => Color::Sky,
-            self::Processing => Color::Emerald,
-            self::Pending => Color::Orange,
-            self::Cancelled => Color::Gray,
-            self::Finished => Color::Indigo,
+            self::Initial => 'yellow',
+            self::New => 'sky',
+            self::Processing => 'lime',
+            self::Pending => 'zinc',
+            self::Cancelled => 'orange',
+            self::Finished => 'indigo',
         };
     }
 }
