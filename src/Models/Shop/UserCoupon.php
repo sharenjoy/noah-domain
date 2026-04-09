@@ -57,7 +57,7 @@ class UserCoupon extends Model
     public function scopeExpiringSoonCoupons($query): Builder
     {
         // 可使用的優惠券，但3天內就要過期了
-        return $query->availableCoupons()->whereBetween('expired_at', [now(), now()->addDays(3)]);
+        return $query->availableCoupons()->whereBetween('expired_at', [now(), now()->addDays(4)]);
     }
 
     // 已使用的優惠券
