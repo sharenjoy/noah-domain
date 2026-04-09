@@ -29,8 +29,7 @@
         "spatie/laravel-translatable": "^6.13",
         "spatie/laravel-permission": "^7.2",
         "spatie/laravel-package-tools": "^1.16",
-        "solution-forest/filament-tree": "^4.0",
-        "webpatser/laravel-countries": "^2.1"
+        "solution-forest/filament-tree": "^4.0"
     },
     "require-dev": {
         "orchestra/testbench": "^10.0||^9.0"
