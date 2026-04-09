@@ -80,4 +80,9 @@ class UserCoupon extends Model
             $query->latest()->where('status', '!=', 'used');
         });
     }
+
+    public function isExpiringSoon()
+    {
+        return $this->expired_at->isBetween(now(), now()->addDays(4));
+    }
 }
