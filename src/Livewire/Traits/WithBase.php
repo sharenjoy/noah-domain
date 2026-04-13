@@ -5,6 +5,7 @@ namespace Sharenjoy\NoahDomain\Livewire\Traits;
 trait WithBase
 {
     public $currency;
+    public $currencyDisplay;
 
     public function bootWithBase()
     {
@@ -23,5 +24,7 @@ trait WithBase
         if (session()->has('currency')) {
             $this->currency = session('currency');
         }
+
+        $this->currencyDisplay = $this->currency == 'TWD' ? '' : $this->currency . ' ';
     }
 }
