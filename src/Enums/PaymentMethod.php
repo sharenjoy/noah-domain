@@ -46,4 +46,14 @@ enum PaymentMethod: string implements HasLabel, HasDescription, HasColor
             self::LINEPay => Color::Amber,
         };
     }
+
+    public function getIcon(): string
+    {
+        return match ($this) {
+            self::CreditCard => 'credit-card',
+            self::ATM => 'calculator',
+            self::COD => 'home-modern',
+            self::LINEPay => 'line-pay',
+        };
+    }
 }
