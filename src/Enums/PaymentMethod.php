@@ -53,7 +53,7 @@ enum PaymentMethod: string implements HasLabel, HasDescription, HasColor
             self::CreditCard => 'credit-card',
             self::ATM => 'calculator',
             self::COD => 'home-modern',
-            self::LINEPay => 'line-pay',
+            self::LINEPay => '',
         };
     }
 }
