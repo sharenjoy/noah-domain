@@ -11,6 +11,7 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Sharenjoy\NoahDomain\Models\Cms\Post;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\CommonModelTrait;
+use Sharenjoy\NoahDomain\Models\Shop\User;
 use Sharenjoy\NoahDomain\Utils\JsonLD;
 use Sharenjoy\NoahDomain\Utils\Media;
 use Spatie\EloquentSortable\Sortable;

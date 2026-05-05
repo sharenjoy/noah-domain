@@ -29,7 +29,7 @@ class MediaLibraryItem extends Model implements HasMedia
 
     public function getMorphClass(): string
     {
-        return 'filament_media_library_item';
+        return class_basename($this);
     }
 
     public function getItem(?string $collection = null): Media
