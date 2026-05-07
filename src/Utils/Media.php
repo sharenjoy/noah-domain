@@ -2,7 +2,7 @@
 
 namespace Sharenjoy\NoahDomain\Utils;
 
-use Sharenjoy\NoahDomain\Models\MediaLibraryItem;
+use Spatie\MediaLibrary\MediaCollections\Models\Media as SpatieMedia;
 
 class Media
 {
@@ -10,7 +10,7 @@ class Media
     {
         if (! $imageId) return;
 
-        return MediaLibraryItem::find($imageId)->getItem();
+        return SpatieMedia::find($imageId)->getItem();
     }
 
     public static function imgUrl(int|array|null $imageId = null)
@@ -21,7 +21,7 @@ class Media
             $images = [];
 
             foreach ($imageId as $imgId) {
-                $mediaLibraryItem = MediaLibraryItem::find($imgId);
+                $mediaLibraryItem = SpatieMedia::find($imgId);
                 $spatieMediaModel = $mediaLibraryItem->getItem();
                 $images[] = $spatieMediaModel->getUrl();
             }
@@ -29,7 +29,7 @@ class Media
             return $images;
         }
 
-        $mediaLibraryItem = MediaLibraryItem::find($imageId);
+        $mediaLibraryItem = SpatieMedia::find($imageId);
         $spatieMediaModel = $mediaLibraryItem->getItem();
 
         return $spatieMediaModel->getUrl();

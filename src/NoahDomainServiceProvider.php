@@ -10,7 +10,6 @@ use Sharenjoy\NoahDomain\Models\Cms\Post;
 use Sharenjoy\NoahDomain\Models\Cms\Role;
 use Sharenjoy\NoahDomain\Models\Cms\StaticPage;
 use Sharenjoy\NoahDomain\Models\Cms\Tag;
-use Sharenjoy\NoahDomain\Models\MediaLibraryItem;
 use Sharenjoy\NoahDomain\Models\Shop\Address;
 use Sharenjoy\NoahDomain\Models\Shop\BaseOrder;
 use Sharenjoy\NoahDomain\Models\Shop\BasePromo;
@@ -97,7 +96,6 @@ class NoahDomainServiceProvider extends PackageServiceProvider
             Invoice::class,
             InvoicePrice::class,
             IssuedOrder::class,
-            MediaLibraryItem::class,
             Menu::class,
             MinQuantityPromo::class,
             MinSpendPromo::class,
