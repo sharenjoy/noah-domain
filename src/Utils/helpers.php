@@ -25,7 +25,7 @@ if (!function_exists('media_url')) {
 }
 
 if (!function_exists('category_tree')) {
-    function category_tree($ids): mixed
+    function category_tree(): mixed
     {
         $categories = \Sharenjoy\NoahDomain\Models\Cms\Category::query()
             ->where('is_active', true)
@@ -51,7 +51,7 @@ if (!function_exists('category_tree')) {
 }
 
 if (!function_exists('menu_tree')) {
-    function menu_tree($ids): mixed
+    function menu_tree(): mixed
     {
         $menus = \Sharenjoy\NoahDomain\Models\Cms\Menu::query()
             ->where('is_active', true)
