@@ -19,6 +19,7 @@
     "require": {
         "php": "^8.3",
         "appstract/laravel-stock": "^1.2",
+        "darryldecode/cart": "dev-master",
         "illuminate/contracts": "^11.0||^12.0||^13.0",
         "league/flysystem-aws-s3-v3": "^3.32",
         "lorisleiva/laravel-actions": "^2.10",
@@ -64,5 +65,11 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/sharenjoy/laravelshoppingcart"
+        }
+    ]
 }
