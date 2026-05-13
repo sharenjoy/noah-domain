@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa79d4f117f716d712920fc92d4642b9",
+    "content-hash": "5189896a0549b493544e59ac6e4a57a1",
     "packages": [
         {
             "name": "appstract/laravel-stock",
