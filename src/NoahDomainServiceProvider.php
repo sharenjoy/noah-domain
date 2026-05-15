@@ -63,9 +63,7 @@ class NoahDomainServiceProvider extends PackageServiceProvider
             ->name('noah-domain')
             ->hasConfigFile([
                 'twaddress',
-            ])
-            ->hasViews()
-            ->hasTranslations();
+            ]);
     }
 
     public function bootingPackage(): void
