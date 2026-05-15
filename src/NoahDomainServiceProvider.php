@@ -129,44 +129,4 @@ class NoahDomainServiceProvider extends PackageServiceProvider
             fn(string $model): array => [class_basename($model) => $model],
         )->all();
     }
-
-    protected function bootPackageViews(): self
-    {
-        if (! $this->package->hasViews) {
-            return $this;
-        }
-
-        $namespace = $this->package->viewNamespace;
-        $vendorViews = __DIR__ . '/../resources/views';
-        $appViews = base_path("resources/views");
-
-        $this->loadViewsFrom($vendorViews, $this->package->viewNamespace());
-
-        if ($this->app->runningInConsole()) {
-            $this->publishes([$vendorViews => $appViews], "{$this->packageView($namespace)}-views");
-        }
-
-        return $this;
-    }
-
-    protected function bootPackageTranslations(): self
-    {
-        if (! $this->package->hasTranslations) {
-            return $this;
-        }
-
-        $vendorTranslations = __DIR__ . '/../resources/lang';
-        $appTranslations = base_path("/lang");
-
-        $this->loadTranslationsFrom($vendorTranslations, $this->package->shortName());
-
-        if ($this->app->runningInConsole()) {
-            $this->publishes(
-                [$vendorTranslations => $appTranslations],
-                "{$this->package->shortName()}-translations"
-            );
-        }
-
-        return $this;
-    }
 }
