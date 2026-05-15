@@ -137,7 +137,7 @@ class NoahDomainServiceProvider extends PackageServiceProvider
         }
 
         $namespace = $this->package->viewNamespace;
-        $vendorViews = $this->package->basePath('/../resources/views');
+        $vendorViews = $this->package->basePath('/resources/views');
         $appViews = base_path("resources/views");
 
         $this->loadViewsFrom($vendorViews, $this->package->viewNamespace());
@@ -155,7 +155,7 @@ class NoahDomainServiceProvider extends PackageServiceProvider
             return $this;
         }
 
-        $vendorTranslations = $this->package->basePath('/../resources/lang');
+        $vendorTranslations = $this->package->basePath('/resources/lang');
         $appTranslations = base_path("/lang");
 
         $this->loadTranslationsFrom($vendorTranslations, $this->package->shortName());
