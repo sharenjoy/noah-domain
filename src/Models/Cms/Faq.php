@@ -49,6 +49,7 @@ class Faq extends Model implements Sortable
             ],
             'right' => [
                 'is_active' => ['required' => true],
+                'categories' => ['required' => true],
             ],
         ];
     }
@@ -57,6 +58,7 @@ class Faq extends Model implements Sortable
     {
         return [
             'question' => ['label' => 'question'],
+            'categories' => [],
             'is_active' => [],
             'created_at' => ['isToggledHiddenByDefault' => true],
             'updated_at' => ['isToggledHiddenByDefault' => true],
