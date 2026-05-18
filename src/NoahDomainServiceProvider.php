@@ -5,6 +5,7 @@ namespace Sharenjoy\NoahDomain;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Sharenjoy\NoahDomain\Models\Cms\Carousel;
 use Sharenjoy\NoahDomain\Models\Cms\Category;
+use Sharenjoy\NoahDomain\Models\Cms\Faq;
 use Sharenjoy\NoahDomain\Models\Cms\Menu;
 use Sharenjoy\NoahDomain\Models\Cms\Post;
 use Sharenjoy\NoahDomain\Models\Cms\Role;
@@ -83,6 +84,7 @@ class NoahDomainServiceProvider extends PackageServiceProvider
             BasePromo::class,
             Brand::class,
             Carousel::class,
+            Faq::class,
             Category::class,
             CoinMutation::class,
             Country::class,
