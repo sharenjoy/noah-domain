@@ -3,6 +3,7 @@
 namespace Sharenjoy\NoahDomain\Models\Shop;
 
 use Appstract\Stock\HasStock;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -49,6 +50,11 @@ class ProductSpecification extends Model implements Sortable
     }
 
     /** SCOPES */
+
+    public function scopeOnLine(Builder $query): Builder
+    {
+        return $query->where('is_active', true);
+    }
 
     /** EVENTS */
 

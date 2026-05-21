@@ -2,6 +2,7 @@
 
 namespace Sharenjoy\NoahDomain\Models\Cms;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\CommonModelTrait;
@@ -68,6 +69,13 @@ class Faq extends Model implements Sortable
     /** RELACTIONS */
 
     /** SCOPES */
+
+    public function scopeOnLine(Builder $query): Builder
+    {
+        return $query
+            ->where('is_active', true)
+            ->whereHas('categories', fn (Builder $query): Builder => $query->onLine());
+    }
 
     /** EVENTS */
 

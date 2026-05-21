@@ -2,6 +2,7 @@
 
 namespace Sharenjoy\NoahDomain\Models\Shop;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -45,6 +46,11 @@ class Giftproduct extends Model implements Sortable
     }
 
     /** SCOPES */
+
+    public function scopeOnLine(Builder $query): Builder
+    {
+        return $query->where('is_active', true);
+    }
 
     /** EVENTS */
 

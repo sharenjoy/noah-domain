@@ -11,6 +11,8 @@ use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Sharenjoy\NoahDomain\Models\Cms\Post;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\CommonModelTrait;
+use Sharenjoy\NoahDomain\Models\Shop\Product;
+use Sharenjoy\NoahDomain\Models\Shop\Promo;
 use Sharenjoy\NoahDomain\Models\Shop\User;
 use Sharenjoy\NoahDomain\Utils\JsonLD;
 use Sharenjoy\NoahDomain\Utils\Media;
@@ -41,20 +43,20 @@ class Tag extends Model implements Sortable
         return $this->morphedByMany(Post::class, 'taggable');
     }
 
-    // public function products()
-    // {
-    //     return $this->morphedByMany(Product::class, 'taggable');
-    // }
+    public function products()
+    {
+        return $this->morphedByMany(Product::class, 'taggable');
+    }
 
     public function users()
     {
         return $this->morphedByMany(User::class, 'taggable');
     }
 
-    // public function promos()
-    // {
-    //     return $this->morphedByMany(Promo::class, 'taggable');
-    // }
+    public function promos()
+    {
+        return $this->morphedByMany(Promo::class, 'taggable');
+    }
 
     /** SEO */
 

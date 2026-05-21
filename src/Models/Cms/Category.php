@@ -2,6 +2,7 @@
 
 namespace Sharenjoy\NoahDomain\Models\Cms;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -11,9 +12,9 @@ use Sharenjoy\NoahDomain\Models\Cms\Post;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\CommonModelTrait;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\HasMediaLibrary;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\HasMenus;
+use Sharenjoy\NoahDomain\Models\Shop\Product;
 use Sharenjoy\NoahDomain\Utils\JsonLD;
 use Sharenjoy\NoahDomain\Utils\Media;
-// use SolutionForest\FilamentTree\Concern\ModelTree;
 use Spatie\Translatable\HasTranslations;
 
 class Category extends Model
@@ -51,12 +52,17 @@ class Category extends Model
         return $this->morphedByMany(Post::class, 'categorizable');
     }
 
-    // public function products(): MorphToMany
-    // {
-    //     return $this->morphedByMany(Product::class, 'categorizable');
-    // }
+    public function products(): MorphToMany
+    {
+        return $this->morphedByMany(Product::class, 'categorizable');
+    }
 
     /** SCOPES */
+
+    public function scopeOnLine(Builder $query): Builder
+    {
+        return $query->where('is_active', true);
+    }
 
     /** EVENTS */
 

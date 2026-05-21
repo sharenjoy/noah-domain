@@ -2,6 +2,7 @@
 
 namespace Sharenjoy\NoahDomain\Models\Cms;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\CommonModelTrait;
@@ -32,4 +33,11 @@ class Carousel extends Model implements Sortable
     protected array $sort = [
         'order_column' => 'asc',
     ];
+
+    /** SCOPES */
+
+    public function scopeOnLine(Builder $query): Builder
+    {
+        return $query->where('is_active', true);
+    }
 }

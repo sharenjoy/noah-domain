@@ -2,6 +2,7 @@
 
 namespace Sharenjoy\NoahDomain\Models\Shop\Survey;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sharenjoy\NoahDomain\Models\Shop\Survey\Question;
@@ -44,5 +45,12 @@ class Section extends Model implements Sortable
     public function questions()
     {
         return $this->hasMany(Question::class);
+    }
+
+    /** SCOPES */
+
+    public function scopeOnLine(Builder $query): Builder
+    {
+        return $query->where('is_active', true);
     }
 }

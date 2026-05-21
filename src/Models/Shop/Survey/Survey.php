@@ -2,6 +2,7 @@
 
 namespace Sharenjoy\NoahDomain\Models\Shop\Survey;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -129,6 +130,34 @@ class Survey extends Model
     public function lastEntry(?Model $participant = null)
     {
         return $participant === null ? null : $this->entriesFrom($participant)->first();
+    }
+
+    /** SCOPES */
+
+    public function scopeOnLine(Builder $query): Builder
+    {
+        $now = now();
+
+        return $query
+            ->where('is_active', true)
+            ->where(function (Builder $query) use ($now): void {
+                $query->whereNull('published_at')
+                    ->orWhere('published_at', '<=', $now);
+            })
+            ->where(function (Builder $query) use ($now): void {
+                $query->where('forever', true)
+                    ->orWhere(function (Builder $query) use ($now): void {
+                        $query
+                            ->where(function (Builder $query) use ($now): void {
+                                $query->whereNull('started_at')
+                                    ->orWhere('started_at', '<=', $now);
+                            })
+                            ->where(function (Builder $query) use ($now): void {
+                                $query->whereNull('expired_at')
+                                    ->orWhere('expired_at', '>=', $now);
+                            });
+                    });
+            });
     }
 
     /**

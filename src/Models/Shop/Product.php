@@ -2,6 +2,7 @@
 
 namespace Sharenjoy\NoahDomain\Models\Shop;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -78,6 +79,17 @@ class Product extends Model implements Sortable
     }
 
     /** SCOPES */
+
+    public function scopeOnLine(Builder $query): Builder
+    {
+        return $query
+            ->where('is_active', true)
+            ->where(function (Builder $query): void {
+                $query->whereNull('published_at')
+                    ->orWhere('published_at', '<=', now());
+            })
+            ->whereHas('categories', fn (Builder $query): Builder => $query->onLine());
+    }
 
     /** EVENTS */
 

@@ -2,6 +2,7 @@
 
 namespace Sharenjoy\NoahDomain\Models\Cms;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
@@ -19,14 +20,12 @@ class StaticPage extends Model
     use SoftDeletes;
     use HasTranslations;
     use HasMediaLibrary;
-    use HasCategoryTree;
     use HasSEO;
 
     protected $guarded = [];
 
     protected $casts = [
         'album' => 'array',
-        'categories' => 'array',
         'is_active' => 'boolean',
     ];
 
@@ -43,6 +42,12 @@ class StaticPage extends Model
     /** RELACTIONS */
 
     /** SCOPES */
+
+    public function scopeOnLine(Builder $query): Builder
+    {
+        return $query
+            ->where('is_active', true);
+    }
 
     /** EVENTS */
 
