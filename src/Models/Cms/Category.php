@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
+use Sharenjoy\NoahDomain\Models\Cms\Menu;
 use Sharenjoy\NoahDomain\Models\Cms\Post;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\CommonModelTrait;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\HasMediaLibrary;
@@ -55,6 +56,11 @@ class Category extends Model
     public function products(): MorphToMany
     {
         return $this->morphedByMany(Product::class, 'categorizable');
+    }
+
+    public function menus(): MorphToMany
+    {
+        return $this->morphedByMany(Menu::class, 'categorizable');
     }
 
     /** SCOPES */

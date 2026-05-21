@@ -12,9 +12,11 @@ use Sharenjoy\NoahDomain\Models\Cms\Category;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\CommonModelTrait;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\HasCategoryTree;
 use Sharenjoy\NoahDomain\Models\Cms\Traits\HasMediaLibrary;
+use Sharenjoy\NoahDomain\Models\Shop\Promo;
+use Sharenjoy\NoahDomain\Models\Shop\Survey\Survey;
+use Sharenjoy\NoahDomain\Models\Shop\Traits\HasPromos;
 use Sharenjoy\NoahDomain\Utils\JsonLD;
 use Sharenjoy\NoahDomain\Utils\Media;
-// use SolutionForest\FilamentTree\Concern\ModelTree;
 use Spatie\Translatable\HasTranslations;
 
 class Menu extends Model
@@ -25,7 +27,7 @@ class Menu extends Model
     use HasMediaLibrary;
     // use ModelTree;
     use HasCategoryTree;
-    // use HasPromos; //** NoahShop CAN OPEN
+    use HasPromos;
     use HasSEO;
 
     protected $guarded = [];
@@ -48,20 +50,20 @@ class Menu extends Model
 
     /** RELACTIONS */
 
-    // public function promos(): MorphToMany
-    // {
-    //     return $this->morphedByMany(Promo::class, 'menuable');
-    // }
+    public function promos(): MorphToMany
+    {
+        return $this->morphedByMany(Promo::class, 'menuable');
+    }
 
     public function categories(): MorphToMany
     {
         return $this->morphedByMany(Category::class, 'menuable');
     }
 
-    // public function surveys(): MorphToMany
-    // {
-    //     return $this->morphedByMany(Survey::class, 'menuable');
-    // }
+    public function surveys(): MorphToMany
+    {
+        return $this->morphedByMany(Survey::class, 'menuable');
+    }
 
     /** SCOPES */
 
