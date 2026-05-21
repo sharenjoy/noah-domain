@@ -66,10 +66,7 @@ class Post extends Model implements Sortable
     {
         return $query
             ->where('is_active', true)
-            ->where(function (Builder $query): void {
-                $query->whereNull('published_at')
-                    ->orWhere('published_at', '<=', now());
-            })
+            ->where('published_at', '<=', now())
             ->whereHas('categories', fn (Builder $query): Builder => $query->onLine());
     }
 

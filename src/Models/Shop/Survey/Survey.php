@@ -42,6 +42,12 @@ class Survey extends Model
         'published_at' => 'datetime',
     ];
 
+    protected $appends = [
+        'activated',
+        'online',
+        'show_on',
+    ];
+
     public $translatable = [
         'title',
         'description',
@@ -134,30 +140,35 @@ class Survey extends Model
 
     /** SCOPES */
 
+    public function scopeActivated(Builder $query): Builder
+    {
+        return $query
+            ->where('is_active', true)
+            ->where('published_at', '<=', now());
+    }
+
     public function scopeOnLine(Builder $query): Builder
     {
         $now = now();
 
         return $query
-            ->where('is_active', true)
-            ->where(function (Builder $query) use ($now): void {
-                $query->whereNull('published_at')
-                    ->orWhere('published_at', '<=', $now);
-            })
+            ->activated()
             ->where(function (Builder $query) use ($now): void {
                 $query->where('forever', true)
                     ->orWhere(function (Builder $query) use ($now): void {
                         $query
-                            ->where(function (Builder $query) use ($now): void {
-                                $query->whereNull('started_at')
-                                    ->orWhere('started_at', '<=', $now);
-                            })
-                            ->where(function (Builder $query) use ($now): void {
-                                $query->whereNull('expired_at')
-                                    ->orWhere('expired_at', '>=', $now);
-                            });
+                            ->where('started_at', '<=', $now)
+                            ->where('expired_at', '>', $now);
                     });
             });
+    }
+
+    public function scopeShowOn(Builder $query): Builder
+    {
+        return $query
+            ->activated()
+            ->whereNotNull('display_expired_at')
+            ->where('display_expired_at', '>', now());
     }
 
     /**
@@ -179,43 +190,57 @@ class Survey extends Model
         return $this->limitPerParticipant() > $this->entriesFrom($participant)->count();
     }
 
-    public function online(): Attribute
+    public function activated(): Attribute
     {
         return Attribute::make(
-            get: function () {
-                if (! $this->is_active) {
-                    return false;
-                }
-
-                $now = now();
-
-                // published_at 必須小於等於現在時間
-                if ($this->published_at !== null && $this->published_at->gt($now)) {
-                    return false;
-                }
-
-                if ($this->forever ?? false) {
-                    return true;
-                }
-
-                return ($this->started_at === null || $this->started_at->lte($now)) &&
-                    ($this->expired_at === null || $this->expired_at->gte($now));
-            },
+            get: fn (): bool => $this->isActivated(),
         );
     }
 
-    public function showUp(): Attribute
+    public function online(): Attribute
     {
         return Attribute::make(
-            get: function () {
-                // published_at 必須小於等於現在時間
-                if ($this->display_expired_at === null) {
-                    return false;
-                }
-
-                return $this->display_expired_at->gt(now());
-            },
+            get: fn (): bool => $this->isOnline(),
         );
+    }
+
+    public function showOn(): Attribute
+    {
+        return Attribute::make(
+            get: fn (): bool => $this->isShowOn(),
+        );
+    }
+
+    protected function isActivated(): bool
+    {
+        return $this->is_active === true
+            && $this->published_at !== null
+            && $this->published_at->lte(now());
+    }
+
+    protected function isOnline(): bool
+    {
+        if (! $this->isActivated()) {
+            return false;
+        }
+
+        if ($this->forever ?? false) {
+            return true;
+        }
+
+        $now = now();
+
+        return $this->started_at !== null
+            && $this->started_at->lte($now)
+            && $this->expired_at !== null
+            && $this->expired_at->gt($now);
+    }
+
+    protected function isShowOn(): bool
+    {
+        return $this->isActivated()
+            && $this->display_expired_at !== null
+            && $this->display_expired_at->gt(now());
     }
 
     /**
