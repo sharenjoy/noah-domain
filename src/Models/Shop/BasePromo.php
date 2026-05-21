@@ -58,6 +58,8 @@ class BasePromo extends Model
         'activated',
         'online',
         'show_on',
+        'show_on_before_started',
+        'show_on_after_expired',
         'generatable',
     ];
 
@@ -191,6 +193,20 @@ class BasePromo extends Model
         );
     }
 
+    public function showOnBeforeStarted(): Attribute
+    {
+        return Attribute::make(
+            get: fn (): bool => $this->isShowOnBeforeStarted(),
+        );
+    }
+
+    public function showOnAfterExpired(): Attribute
+    {
+        return Attribute::make(
+            get: fn (): bool => $this->isShowOnAfterExpired(),
+        );
+    }
+
     protected function isActivated(): bool
     {
         return $this->is_active === true
@@ -221,6 +237,22 @@ class BasePromo extends Model
         return $this->isActivated()
             && $this->display_expired_at !== null
             && $this->display_expired_at->gt(now());
+    }
+
+    protected function isShowOnBeforeStarted(): bool
+    {
+        return $this->isShowOn()
+            && ! ($this->forever ?? false)
+            && $this->started_at !== null
+            && $this->started_at->gt(now());
+    }
+
+    protected function isShowOnAfterExpired(): bool
+    {
+        return $this->isShowOn()
+            && ! ($this->forever ?? false)
+            && $this->expired_at !== null
+            && $this->expired_at->lte(now());
     }
 
     /**
