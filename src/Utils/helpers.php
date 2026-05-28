@@ -1,5 +1,15 @@
 <?php
 
+if (! function_exists('app_setting')) {
+    /**
+     * 透過共用快取取得設定。支援點記法。
+     */
+    function app_setting(string $key, mixed $default = null): mixed
+    {
+        return app(\Sharenjoy\NoahDomain\Services\AppSettings::class)->get($key, $default);
+    }
+}
+
 if (!function_exists('noah_setting')) {
     function noah_setting(string $key): mixed
     {

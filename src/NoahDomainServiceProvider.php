@@ -48,6 +48,7 @@ use Sharenjoy\NoahDomain\Models\Shop\UserCoupon;
 use Sharenjoy\NoahDomain\Models\Shop\UserCouponStatus;
 use Sharenjoy\NoahDomain\Models\Shop\UserLevel;
 use Sharenjoy\NoahDomain\Models\Shop\UserLevelStatus;
+use Sharenjoy\NoahDomain\Services\AppSettings;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -67,9 +68,9 @@ class NoahDomainServiceProvider extends PackageServiceProvider
             ]);
     }
 
-    public function bootingPackage(): void
+    public function packageRegistered(): void
     {
-        Relation::enforceMorphMap($this->morphMap());
+        $this->app->scoped(AppSettings::class);
     }
 
     /**
