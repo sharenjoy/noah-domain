@@ -68,6 +68,11 @@ class NoahDomainServiceProvider extends PackageServiceProvider
             ]);
     }
 
+    public function bootingPackage(): void
+    {
+        Relation::enforceMorphMap($this->morphMap());
+    }
+
     public function packageRegistered(): void
     {
         $this->app->scoped(AppSettings::class);
